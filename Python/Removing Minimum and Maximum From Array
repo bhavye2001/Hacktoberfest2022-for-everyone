@@ -1,0 +1,21 @@
+class Solution:
+    def minimumDeletions(self, nums: List[int]) -> int:
+        if(len(nums)<3):
+            return len(nums)
+        elif(len(nums)==3):
+            return 2
+        
+        a=nums.index(min(nums))
+        b=nums.index(max(nums))
+        ans=10000000000000000000000
+        if(a<b):
+            ans=min(ans,min(b+1,len(nums)-a,a+1+len(nums)-b))
+        else:
+            ans=min(ans,min(a+1,len(nums)-b,b+1+len(nums)-a))
+        print(a,b)      
+        return ans
+                    
+                    
+                    
+                    
+                    
